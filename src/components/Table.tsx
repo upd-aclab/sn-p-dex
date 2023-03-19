@@ -17,15 +17,17 @@ const Table = () => {
       <thead>
         <tr>
           {columns.map((column, index) => (
-            <th key={index}>{column}</th>
+            <th className="cell" key={index}>
+              {column}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
         {data.map(({ name, acronym }, index) => (
           <tr key={index}>
-            <td>{name}</td>
-            <td>{acronym}</td>
+            <td className="cell">{name}</td>
+            <td className="cell">{acronym}</td>
           </tr>
         ))}
       </tbody>

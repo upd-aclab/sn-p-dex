@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .cell {
+    @apply border border-solid border-white py-2 px-4 hover:bg-white/20;
+  }
+}
