@@ -111,6 +111,7 @@ const data: System[] = [
   },
   {
     name: "Spiking Neural P Systems with Structural Plasticity",
+    power: "NRE",
   },
 ];
 

@@ -31,7 +31,7 @@ const Home: NextPage = () => {
     handleChange,
   };
 
-  const columns = ["Name"];
+  const columns = ["Name", "Power"];
   let rows = data;
 
   if (short) {
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <Settings states={states} handlers={handlers} />
       </div>
       <div className="flex w-[70%] items-center justify-center">
-        <section className="flex flex-col gap-3">
+        <section className="flex flex-col gap-4">
           <Table
             columns={columns}
             rows={rows.slice(pageLength * (page - 1), pageLength * page)}

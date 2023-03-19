@@ -7,8 +7,8 @@ interface Props {
 
 const Pager = ({ page, pages, decrementPage, incrementPage }: Props) => {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="flex items-center gap-2">
+    <div className="flex flex-col items-center gap-3">
+      <div className="flex items-center gap-3">
         {page > 1 ? (
           <button
             onClick={decrementPage}
