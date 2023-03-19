@@ -1,6 +1,4 @@
-interface System {
-  name: string;
-}
+import type System from "~/types/System";
 
 const data: System[] = [
   {

@@ -1,4 +1,5 @@
 import data from "~/data/data";
+import Row from "./Row";
 
 const Table = () => {
   const columns = ["Name"];
@@ -15,10 +16,8 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {data.map(({ name }, index) => (
-          <tr key={index}>
-            <td className="cell">{name}</td>
-          </tr>
+        {data.map((data, index) => (
+          <Row key={index} data={data} />
         ))}
       </tbody>
     </table>
