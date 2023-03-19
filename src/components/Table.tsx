@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import type System from "~/types/System";
 import Row from "./Row";
 
@@ -8,7 +9,7 @@ interface Props {
 
 const Table = ({ columns, rows }: Props) => {
   return (
-    <table>
+    <motion.table layout>
       <thead>
         <tr>
           {columns.map((column, index) => (
@@ -23,7 +24,7 @@ const Table = ({ columns, rows }: Props) => {
           <Row key={index} data={data} />
         ))}
       </tbody>
-    </table>
+    </motion.table>
   );
 };
 
