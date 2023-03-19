@@ -1,5 +1,9 @@
 const Introduction = () => {
-  return <h1 className="text-5xl">SN P Results</h1>;
+  return (
+    <section>
+      <h1 className="text-4xl">SN P Results</h1>
+    </section>
+  );
 };
 
 export default Introduction;

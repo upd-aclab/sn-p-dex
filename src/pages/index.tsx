@@ -1,6 +1,7 @@
 import { type NextPage } from "next";
 import { useState } from "react";
 import Introduction from "~/components/Introduction";
+import Navbar from "~/components/Navbar";
 import Pager from "~/components/Pager";
 import Settings from "~/components/Settings";
 import Table from "~/components/Table";
@@ -43,8 +44,9 @@ const Home: NextPage = () => {
 
   return (
     <main className="flex min-h-screen justify-between">
-      <div className="px-10">
+      <div className="debug p-10">
         <Introduction />
+        <Navbar />
         <Settings states={states} handlers={handlers} />
       </div>
       <div className="flex w-[70%] items-center justify-center">

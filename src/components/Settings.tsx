@@ -9,14 +9,14 @@ interface Props {
 const Settings = ({ states, handlers }: Props) => {
   return (
     <section>
-      <h2 className="text-4xl">Settings</h2>
-      <label>
+      <h2 className="mb-2 text-3xl">Settings</h2>
+      <label className="flex gap-2">
         <input
           type="checkbox"
           checked={states.short}
           onChange={handlers.handleChange}
         />
-        Abbreviate &quot;Spiking Neural P Systems&quot;?
+        abbreviate &quot;Spiking Neural P Systems&quot;
       </label>
     </section>
   );
