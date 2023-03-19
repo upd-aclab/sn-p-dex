@@ -12,7 +12,7 @@ const Pager = ({ page, pages, decrementPage, incrementPage }: Props) => {
         {page > 1 ? (
           <button
             onClick={decrementPage}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-solid border-white"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-solid border-white transition-all hover:scale-110"
           >
             {page - 1}
           </button>
@@ -25,7 +25,7 @@ const Pager = ({ page, pages, decrementPage, incrementPage }: Props) => {
         {page < pages ? (
           <button
             onClick={incrementPage}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-solid border-white"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-solid border-white transition-all hover:scale-110"
           >
             {page + 1}
           </button>
