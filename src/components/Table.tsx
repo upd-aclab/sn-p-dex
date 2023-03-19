@@ -1,16 +1,7 @@
-const Table = () => {
-  const columns = ["Name", "Acronym"];
+import data from "~/data/data";
 
-  const data = [
-    {
-      name: "Standard",
-      acronym: "SN P",
-    },
-    {
-      name: "Structural Plasticity",
-      acronym: "SNPSP",
-    },
-  ];
+const Table = () => {
+  const columns = ["Name"];
 
   return (
     <table>
@@ -24,10 +15,9 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {data.map(({ name, acronym }, index) => (
+        {data.map(({ name }, index) => (
           <tr key={index}>
             <td className="cell">{name}</td>
-            <td className="cell">{acronym}</td>
           </tr>
         ))}
       </tbody>
