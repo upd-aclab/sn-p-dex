@@ -3,6 +3,8 @@ import type System from "~/types/System";
 const data: System[] = [
   {
     name: "Spiking Neural P Systems",
+    description: "vanilla SN P system",
+    references: ["/", "/", "/"],
   },
   {
     name: "Spiking Neural P Systems with Chain structures",
@@ -36,6 +38,7 @@ const data: System[] = [
   },
   {
     name: "Fuzzy Reasoning Spiking Neural P Systems",
+    description: "neurons",
   },
   {
     name: "Trapezoidal Fuzzy Reasoning Spiking Neural P Systems",
@@ -69,6 +72,7 @@ const data: System[] = [
   },
   {
     name: "Extended Spiking Neural P Systems",
+    description: "rules",
   },
   {
     name: "Extended Spiking Neural P Systems with Excitatory and Inhibitory Astrocytes",
@@ -78,6 +82,7 @@ const data: System[] = [
   },
   {
     name: "Weighted Spiking Neural P Systems",
+    description: "neurons, rules",
   },
   {
     name: "Spiking Neural P Systems with Thresholds",
@@ -96,9 +101,11 @@ const data: System[] = [
   },
   {
     name: "Spiking Neural P Systems with extended rules on synapses",
+    description: "neurons, synapses",
   },
   {
     name: "Spiking Neural P Systems with Astrocytes",
+    description: "neurons, astrocytes",
   },
   {
     name: "Spiking Neural P Systems with Polarizations",
@@ -111,7 +118,8 @@ const data: System[] = [
   },
   {
     name: "Spiking Neural P Systems with Structural Plasticity",
-    power: "NRE",
+    description: "rules",
+    references: [],
   },
 ];
 

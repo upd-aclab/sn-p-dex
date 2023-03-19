@@ -31,7 +31,7 @@ const Home: NextPage = () => {
     handleChange,
   };
 
-  const columns = ["Name", "Power"];
+  const columns = ["Name", "Description", "Reference(s)"];
   let rows = data;
 
   if (short) {
