@@ -1,9 +1,12 @@
-import data from "~/data/data";
+import type System from "~/types/System";
 import Row from "./Row";
 
-const Table = () => {
-  const columns = ["Name"];
+interface Props {
+  columns: string[];
+  rows: System[];
+}
 
+const Table = ({ columns, rows }: Props) => {
   return (
     <table>
       <thead>
@@ -16,7 +19,7 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {data.map((data, index) => (
+        {rows.map((data, index) => (
           <Row key={index} data={data} />
         ))}
       </tbody>
