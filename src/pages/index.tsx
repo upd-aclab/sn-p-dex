@@ -42,22 +42,24 @@ const Home: NextPage = () => {
   const pages = Math.ceil(rows.length / pageLength);
 
   return (
-    <main className="flex min-h-screen">
-      <div>
+    <main className="flex min-h-screen justify-between">
+      <div className="px-10">
         <Introduction />
         <Settings states={states} handlers={handlers} />
       </div>
-      <div>
-        <Table
-          columns={columns}
-          rows={rows.slice(pageLength * (page - 1), pageLength * page)}
-        />
-        <Pager
-          page={page}
-          pages={pages}
-          decrementPage={decrementPage}
-          incrementPage={incrementPage}
-        />
+      <div className="flex w-[70%] items-center justify-center">
+        <section className="flex flex-col gap-3">
+          <Table
+            columns={columns}
+            rows={rows.slice(pageLength * (page - 1), pageLength * page)}
+          />
+          <Pager
+            page={page}
+            pages={pages}
+            decrementPage={decrementPage}
+            incrementPage={incrementPage}
+          />
+        </section>
       </div>
     </main>
   );

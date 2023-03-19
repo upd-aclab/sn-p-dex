@@ -7,3 +7,9 @@
     @apply border border-solid border-white py-2 px-4 hover:bg-white/20;
   }
 }
+
+@layer utilities {
+  .debug {
+    @apply border border-solid border-white sm:border-yellow-500 md:border-green-500 lg:border-cyan-500 xl:border-pink-500 2xl:border-orange-500;
+  }
+}
