@@ -1,7 +1,7 @@
 const Introduction = () => {
   return (
     <section>
-      <h1 className="text-4xl">SN P Results</h1>
+      <h1 className="text-4xl">SN P Dex</h1>
     </section>
   );
 };

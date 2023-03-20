@@ -8,7 +8,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Head>
-        <title>SN P Results</title>
+        <title>SN P Dex</title>
       </Head>
       <div className="min-h-screen font-display dark:bg-black dark:text-white">
         {children}
