@@ -33,7 +33,9 @@ const Pager = ({ page, pages, decrementPage, incrementPage }: Props) => {
           <div className="h-8 w-8" />
         )}
       </div>
-      <div className="flex justify-center">Page #</div>
+      <div className="flex justify-center">
+        Page {page} of {pages}
+      </div>
     </div>
   );
 };

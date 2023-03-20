@@ -16,7 +16,7 @@ const Settings = ({ states, handlers }: Props) => {
           checked={states.short}
           onChange={handlers.handleChange}
         />
-        abbreviate &quot;Spiking Neural P Systems&quot;
+        abbreviate &quot;Spiking Neural P Systems&quot; (SNPS)
       </label>
     </section>
   );
