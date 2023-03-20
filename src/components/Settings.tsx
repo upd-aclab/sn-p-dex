@@ -8,9 +8,9 @@ interface Props {
 
 const Settings = ({ states, handlers }: Props) => {
   return (
-    <section>
+    <section className="px-10">
       <h2 className="mb-2 text-3xl">Settings</h2>
-      <label className="flex gap-2">
+      <label className="flex gap-4">
         <input
           type="checkbox"
           checked={states.short}

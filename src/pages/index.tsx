@@ -44,9 +44,9 @@ const Home: NextPage = () => {
 
   return (
     <main className="flex min-h-screen justify-between">
-      <div className="debug p-10">
-        <Intro />
+      <div className="w-[30%] border-r border-solid border-white">
         <Navbar />
+        <Intro />
         <Settings states={states} handlers={handlers} />
       </div>
       <div className="flex w-[70%] items-center justify-center">

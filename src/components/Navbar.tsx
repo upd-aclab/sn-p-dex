@@ -1,10 +1,32 @@
 import Link from "next/link";
 
 const Navbar = () => {
+  const links = [
+    {
+      href: "/",
+      name: "Homepage",
+    },
+    {
+      href: "/references",
+      name: "Reference List",
+    },
+    {
+      href: "/guide",
+      name: "Contributing Guide",
+    },
+  ];
+
   return (
-    <nav className="debug flex flex-col gap-1">
-      <Link href="/references">Reference List</Link>
-      <Link href="/guide">Contributing Guide</Link>
+    <nav className="flex flex-col">
+      {links.map(({ href, name }, index) => (
+        <Link
+          className="border-b border-solid border-white px-10 py-2.5 hover:bg-white/20"
+          href={href}
+          key={index}
+        >
+          {name}
+        </Link>
+      ))}
     </nav>
   );
 };
