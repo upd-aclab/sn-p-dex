@@ -9,7 +9,7 @@ import data from "~/data/data";
 import { shorten } from "~/data/utils";
 
 const Home: NextPage = () => {
-  const [short, setShort] = useState(false);
+  const [short, setShort] = useState(true);
   const [page, setPage] = useState(1);
 
   const decrementPage = () => {
