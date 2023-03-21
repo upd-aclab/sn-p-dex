@@ -3,6 +3,10 @@ import type System from "~/types/System";
 const data: System[] = [
   {
     name: "Spiking Neural P Systems",
+    description: "Standard SN P system.",
+    references: [
+      "https://www.researchgate.net/publication/220443792_Spiking_Neural_P_Systems",
+    ],
   },
   {
     name: "Spiking Neural P Systems with Chain structures",
