@@ -18,6 +18,8 @@ const Row = ({ data }: Props) => {
                 key={index}
                 href={href}
                 className="transition-all hover:scale-110"
+                target="_blank"
+                rel="noreferrer"
               >
                 [{index + 1}]
               </Link>
