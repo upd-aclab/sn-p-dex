@@ -115,6 +115,8 @@ const data: System[] = [
   },
   {
     name: "Spiking Neural P Systems with Structural Plasticity",
+    description: "Synapses can be created/deleted.",
+    references: ["https://link.springer.com/article/10.1007/s00521-015-1857-4"],
   },
 ];
 

@@ -7,9 +7,11 @@ import Settings from "~/components/Settings";
 import Table from "~/components/Table";
 import data from "~/data/data";
 import { shorten } from "~/data/utils";
+import { lcs } from "~/lib/lcs";
 
 const Home: NextPage = () => {
   const [short, setShort] = useState(true);
+  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
   const decrementPage = () => {
@@ -25,11 +27,14 @@ const Home: NextPage = () => {
   };
 
   const states = {
+    search,
     short,
   };
 
   const handlers = {
+    setSearch,
     handleChange,
+    setPage,
   };
 
   const columns = ["Name", "Description", "Reference(s)"];
@@ -38,6 +43,17 @@ const Home: NextPage = () => {
   if (short) {
     rows = shorten(data);
   }
+
+  rows = rows
+    .map((row) => ({
+      ...row,
+      titleMatches: lcs(row.name.toLowerCase(), search.toLowerCase()),
+    }))
+    .filter(
+      (updatedRows) =>
+        search.length === 0 || updatedRows.titleMatches.length > 0
+    )
+    .sort((a, b) => b.titleMatches.length - a.titleMatches.length);
 
   const pageLength = 15;
   const pages = Math.ceil(rows.length / pageLength);
