@@ -7,7 +7,7 @@ import Settings from "~/components/Settings";
 import Table from "~/components/Table";
 import data from "~/data/data";
 import shorten from "~/utils/shorten";
-import { lcs } from "~/utils/lcs";
+import lcs from "~/utils/lcs";
 
 const Home: NextPage = () => {
   const [short, setShort] = useState(true);

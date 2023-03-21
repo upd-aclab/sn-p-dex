@@ -1,7 +1,7 @@
 // Given strings a and b, finds the indices of the longest common
 // subsequence of a and b in a.
 
-export function lcs(a: string, b: string): number[] {
+const lcs = (a: string, b: string): number[] => {
   const indices = [];
   const c = [...a],
     n = c.length,
@@ -32,4 +32,6 @@ export function lcs(a: string, b: string): number[] {
     }
   }
   return indices;
-}
+};
+
+export default lcs;
