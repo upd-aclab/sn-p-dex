@@ -1,7 +1,7 @@
 import { type Dispatch, type SetStateAction } from "react";
 
 interface Handlers {
-  handleChange: () => void;
+  toggleShort: () => void;
   setSearch: Dispatch<SetStateAction<string>>;
   setPage: Dispatch<SetStateAction<number>>;
 }

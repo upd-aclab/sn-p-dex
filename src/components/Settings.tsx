@@ -14,7 +14,7 @@ const Settings = ({ states, handlers }: Props) => {
         <input
           type="checkbox"
           checked={states.short}
-          onChange={handlers.handleChange}
+          onChange={handlers.toggleShort}
         />
         abbreviate &quot;Spiking Neural P Systems&quot; (SNPS)
       </label>

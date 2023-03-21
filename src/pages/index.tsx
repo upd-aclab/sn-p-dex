@@ -22,7 +22,7 @@ const Home: NextPage = () => {
     setPage((previousPage) => previousPage + 1);
   };
 
-  const handleChange = () => {
+  const toggleShort = () => {
     setShort((previousShort) => !previousShort);
   };
 
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
 
   const handlers = {
     setSearch,
-    handleChange,
+    toggleShort,
     setPage,
   };
 
