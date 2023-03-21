@@ -1,6 +1,6 @@
 interface States {
   short: boolean;
-	search: string;
+  search: string;
 }
 
 export default States;
