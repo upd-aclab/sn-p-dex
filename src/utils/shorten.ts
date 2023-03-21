@@ -7,4 +7,4 @@ const shorten = (data: System[]) => {
   }));
 };
 
-export { shorten };
+export default shorten;
