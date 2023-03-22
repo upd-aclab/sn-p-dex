@@ -1,4 +1,4 @@
-export default interface System {
+export default interface Variant {
   name: string;
   description?: string;
   references?: string[];

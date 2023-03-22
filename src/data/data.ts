@@ -1,6 +1,6 @@
-import type System from "~/types/System";
+import type Variant from "~/types/Variant";
 
-const data: System[] = [
+const data: Variant[] = [
   {
     name: "Spiking Neural P Systems",
     description: "Standard SN P system.",

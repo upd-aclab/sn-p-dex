@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import type System from "~/types/System";
+import type Variant from "~/types/Variant";
 import Row from "./Row";
 
 interface Props {
   columns: string[];
-  rows: System[];
+  rows: Variant[];
 }
 
 const Table = ({ columns, rows }: Props) => {

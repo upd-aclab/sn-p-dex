@@ -1,9 +1,9 @@
-import type System from "~/types/System";
+import type Variant from "~/types/Variant";
 import Link from "next/link";
 import ProbedText from "./ProbedText";
 
 interface Props {
-  data: System;
+  data: Variant;
 }
 
 const Row = ({ data }: Props) => {
