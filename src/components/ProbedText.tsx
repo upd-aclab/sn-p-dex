@@ -8,7 +8,7 @@ const ProbedText = ({ text, indices }: Props) => {
 
   const spans = chars.map((char, index) =>
     indices.includes(index) ? (
-      <span key={index} className="bg-blue-500/80">
+      <span key={index} className="bg-blue-500/60">
         {char}
       </span>
     ) : (
