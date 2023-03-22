@@ -22,7 +22,7 @@ const Settings = ({ states, handlers }: Props) => {
         <input
           type="text"
           value={states.search}
-          placeholder="Search for a variant..."
+          placeholder="Search by variant..."
           onChange={(e) => {
             handlers.setSearch(e.target.value);
             handlers.setPage(1);
