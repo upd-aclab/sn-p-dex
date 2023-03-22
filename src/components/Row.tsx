@@ -1,5 +1,6 @@
 import type System from "~/types/System";
 import Link from "next/link";
+import ProbedText from "./ProbedText";
 
 interface Props {
   data: System;
@@ -8,7 +9,14 @@ interface Props {
 const Row = ({ data }: Props) => {
   return (
     <tr>
-      <td className="cell">{data.name}</td>
+      <td className="cell">
+        {typeof data.titleMatches === "undefined" ||
+        data.titleMatches?.length === 0 ? (
+          <p>{data.name}</p>
+        ) : (
+          <ProbedText text={data.name} indices={data.titleMatches} />
+        )}
+      </td>
       <td className="cell">{data.description}</td>
       <td className="cell">
         {data.references && (
