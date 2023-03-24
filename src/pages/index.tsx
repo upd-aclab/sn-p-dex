@@ -47,13 +47,13 @@ const Home: NextPage = () => {
   rows = rows
     .map((row) => ({
       ...row,
-      titleMatches: lcs(row.name.toLowerCase(), search.toLowerCase()),
+      matchIndices: lcs(row.name.toLowerCase(), search.toLowerCase()),
     }))
     .filter(
       (updatedRows) =>
-        search.length === 0 || updatedRows.titleMatches.length > 0
+        search.length === 0 || updatedRows.matchIndices.length > 0
     )
-    .sort((a, b) => b.titleMatches.length - a.titleMatches.length);
+    .sort((a, b) => b.matchIndices.length - a.matchIndices.length);
 
   const pageLength = 15;
   const pages = Math.ceil(rows.length / pageLength);

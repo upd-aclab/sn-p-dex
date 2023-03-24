@@ -5,7 +5,15 @@ const data: Variant[] = [
     name: "Spiking Neural P Systems",
     description: "Standard SN P system.",
     references: [
-      "https://www.researchgate.net/publication/220443792_Spiking_Neural_P_Systems",
+      {
+        link: "https://www.researchgate.net/publication/220443792_Spiking_Neural_P_Systems",
+        site: "",
+        doi: "",
+        authors: [],
+        date: new Date(),
+        open: true,
+        bibtex: "",
+      },
     ],
   },
   {
@@ -116,7 +124,17 @@ const data: Variant[] = [
   {
     name: "Spiking Neural P Systems with Structural Plasticity",
     description: "Synapses can be created/deleted.",
-    references: ["https://link.springer.com/article/10.1007/s00521-015-1857-4"],
+    references: [
+      {
+        link: "https://link.springer.com/article/10.1007/s00521-015-1857-4",
+        site: "",
+        doi: "",
+        authors: [],
+        date: new Date(),
+        open: false,
+        bibtex: "",
+      },
+    ],
   },
 ];
 

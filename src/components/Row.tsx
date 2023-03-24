@@ -10,21 +10,21 @@ const Row = ({ data }: Props) => {
   return (
     <tr>
       <td className="cell">
-        {typeof data.titleMatches === "undefined" ||
-        data.titleMatches?.length === 0 ? (
+        {typeof data.matchIndices === "undefined" ||
+        data.matchIndices?.length === 0 ? (
           <p>{data.name}</p>
         ) : (
-          <ProbedText text={data.name} indices={data.titleMatches} />
+          <ProbedText text={data.name} indices={data.matchIndices} />
         )}
       </td>
       <td className="cell">{data.description}</td>
       <td className="cell">
         {data.references && (
           <div className="flex gap-1">
-            {data.references.map((href, index) => (
+            {data.references.map(({link}, index) => (
               <Link
                 key={index}
-                href={href}
+                href={link}
                 className="transition-all hover:scale-110"
                 target="_blank"
                 rel="noreferrer"
