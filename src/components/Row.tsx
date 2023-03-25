@@ -21,11 +21,13 @@ const Row = ({ data }: Props) => {
       <td className="cell">
         {data.references && (
           <div className="flex gap-1">
-            {data.references.map(({ link }, index) => (
+            {data.references.map(({ link, open }, index) => (
               <Link
                 key={index}
                 href={link}
-                className="transition-all hover:scale-110"
+                className={`transition-all hover:scale-110 ${
+                  open ? "text-green-400" : "text-yellow-400"
+                }`}
                 target="_blank"
                 rel="noreferrer"
               >
