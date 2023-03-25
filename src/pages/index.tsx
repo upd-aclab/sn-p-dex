@@ -10,6 +10,7 @@ import shorten from "~/utils/shorten";
 import lcs from "~/utils/lcs";
 import type Variant from "~/types/Variant";
 import type Name from "~/types/Name";
+import clean from "~/utils/clean";
 
 const Home: NextPage = () => {
   const [short, setShort] = useState(true);
@@ -68,14 +69,14 @@ const Home: NextPage = () => {
     }
 
     const firstNameMatches = (author: Name) =>
-      author.firstName
+      clean(author.firstName)
         .toLowerCase()
-        .startsWith(authorFirstNameSearch.toLowerCase());
+        .startsWith(clean(authorFirstNameSearch.toLowerCase()));
 
     const lastNameMatches = (author: Name) =>
-      author.lastName
+      clean(author.lastName)
         .toLowerCase()
-        .startsWith(authorLastNameSearch.toLowerCase());
+        .startsWith(clean(authorLastNameSearch.toLowerCase()));
 
     return row.references?.some((reference) =>
       reference.authors.some(
