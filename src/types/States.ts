@@ -3,6 +3,7 @@ interface States {
   variant: string;
   authorFirstName: string;
   authorLastName: string;
+  doi: string;
 }
 
 export default States;

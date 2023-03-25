@@ -5,7 +5,7 @@ interface Variant {
   description?: string;
   references?: Reference[];
   matchIndices?: number[];
-	authorMatch?: boolean;
+  matched?: boolean;
 }
 
 export default Variant;

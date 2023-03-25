@@ -5,6 +5,7 @@ interface Handlers {
   setVariant: Dispatch<SetStateAction<string>>;
   setAuthorFirstName: Dispatch<SetStateAction<string>>;
   setAuthorLastName: Dispatch<SetStateAction<string>>;
+  setDoi: Dispatch<SetStateAction<string>>;
   setPage: Dispatch<SetStateAction<number>>;
 }
 

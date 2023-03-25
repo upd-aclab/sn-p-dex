@@ -17,6 +17,7 @@ const Home: NextPage = () => {
   const [variant, setVariant] = useState("");
   const [authorFirstName, setAuthorFirstName] = useState("");
   const [authorLastName, setAuthorLastName] = useState("");
+  const [doi, setDoi] = useState("");
   const [page, setPage] = useState(1);
 
   const decrementPage = () => {
@@ -32,17 +33,19 @@ const Home: NextPage = () => {
   };
 
   const states = {
+    short,
     variant,
     authorFirstName,
     authorLastName,
-    short,
+    doi,
   };
 
   const handlers = {
+    toggleShort,
     setVariant,
     setAuthorFirstName,
     setAuthorLastName,
-    toggleShort,
+    setDoi,
     setPage,
   };
 
@@ -98,9 +101,25 @@ const Home: NextPage = () => {
               (!authorLastName || lastNameMatches(author))
           ),
         })),
-        authorMatch: authorMatches(row),
+        matched: authorMatches(row),
       }))
-      .filter((row) => row.authorMatch);
+      .filter((row) => row.matched);
+  }
+
+  if (doi) {
+    rows = rows
+      .map((row) => ({
+        ...row,
+        references: row.references?.map((reference) => ({
+          ...reference,
+          matched: reference.doi.toLowerCase() === doi.toLowerCase(),
+        })),
+      }))
+      .map((row) => ({
+        ...row,
+        matched: row.references?.some((reference) => reference.matched),
+      }))
+      .filter((row) => row.matched);
   }
 
   const pageLength = 10;

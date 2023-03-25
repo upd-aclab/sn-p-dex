@@ -55,6 +55,18 @@ const Settings = ({ states, handlers }: Props) => {
             className="w-full rounded-md border border-solid border-white bg-black px-3 py-2 text-white"
           />
         </label>
+        <label>
+          <input
+            type="text"
+            value={states.doi}
+            placeholder="Search by DOI..."
+            onChange={(e) => {
+              handlers.setDoi(e.target.value);
+              handlers.setPage(1);
+            }}
+            className="w-full rounded-md border border-solid border-white bg-black px-3 py-2 text-white"
+          />
+        </label>
       </div>
     </section>
   );
