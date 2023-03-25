@@ -96,7 +96,7 @@ const Home: NextPage = () => {
       .filter((row) => row.authorMatch);
   }
 
-  const pageLength = 15;
+  const pageLength = 10;
   const pages = Math.ceil(rows.length / pageLength);
 
   return (
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
         <Intro />
         <Settings states={states} handlers={handlers} />
       </div>
-      <div className="flex w-[70%] items-center justify-center">
+      <div className="flex w-[70%] items-center justify-center px-10">
         <section className="flex flex-col gap-4">
           {rows.length > 0 ? (
             <>
