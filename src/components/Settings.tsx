@@ -22,10 +22,10 @@ const Settings = ({ states, handlers }: Props) => {
         <label>
           <input
             type="text"
-            value={states.variantSearch}
+            value={states.variant}
             placeholder="Search by variant..."
             onChange={(e) => {
-              handlers.setVariantSearch(e.target.value);
+              handlers.setVariant(e.target.value);
               handlers.setPage(1);
             }}
             className="w-full rounded-md border border-solid border-white bg-black px-3 py-2 text-white"
@@ -34,10 +34,10 @@ const Settings = ({ states, handlers }: Props) => {
         <label>
           <input
             type="text"
-            value={states.authorFirstNameSearch}
+            value={states.authorFirstName}
             placeholder="Search by author's first name..."
             onChange={(e) => {
-              handlers.setAuthorFirstNameSearch(e.target.value);
+              handlers.setAuthorFirstName(e.target.value);
               handlers.setPage(1);
             }}
             className="w-full rounded-md border border-solid border-white bg-black px-3 py-2 text-white"
@@ -46,10 +46,10 @@ const Settings = ({ states, handlers }: Props) => {
         <label>
           <input
             type="text"
-            value={states.authorLastNameSearch}
+            value={states.authorLastName}
             placeholder="Search by author's last name..."
             onChange={(e) => {
-              handlers.setAuthorLastNameSearch(e.target.value);
+              handlers.setAuthorLastName(e.target.value);
               handlers.setPage(1);
             }}
             className="w-full rounded-md border border-solid border-white bg-black px-3 py-2 text-white"

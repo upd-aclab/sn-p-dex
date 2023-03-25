@@ -14,9 +14,9 @@ import clean from "~/utils/clean";
 
 const Home: NextPage = () => {
   const [short, setShort] = useState(true);
-  const [variantSearch, setVariantSearch] = useState("");
-  const [authorFirstNameSearch, setAuthorFirstNameSearch] = useState("");
-  const [authorLastNameSearch, setAuthorLastNameSearch] = useState("");
+  const [variant, setVariant] = useState("");
+  const [authorFirstName, setAuthorFirstName] = useState("");
+  const [authorLastName, setAuthorLastName] = useState("");
   const [page, setPage] = useState(1);
 
   const decrementPage = () => {
@@ -32,16 +32,16 @@ const Home: NextPage = () => {
   };
 
   const states = {
-    variantSearch,
-    authorFirstNameSearch,
-    authorLastNameSearch,
+    variant,
+    authorFirstName,
+    authorLastName,
     short,
   };
 
   const handlers = {
-    setVariantSearch,
-    setAuthorFirstNameSearch,
-    setAuthorLastNameSearch,
+    setVariant,
+    setAuthorFirstName,
+    setAuthorLastName,
     toggleShort,
     setPage,
   };
@@ -53,11 +53,11 @@ const Home: NextPage = () => {
     rows = shorten(data);
   }
 
-  if (variantSearch) {
+  if (variant) {
     rows = rows
       .map((row) => ({
         ...row,
-        matchIndices: lcs(row.name.toLowerCase(), variantSearch.toLowerCase()),
+        matchIndices: lcs(row.name.toLowerCase(), variant.toLowerCase()),
       }))
       .filter((updatedRows) => updatedRows.matchIndices.length > 0)
       .sort((a, b) => b.matchIndices.length - a.matchIndices.length);
@@ -66,27 +66,27 @@ const Home: NextPage = () => {
   const firstNameMatches = (author: Name) =>
     clean(author.firstName)
       .toLowerCase()
-      .startsWith(clean(authorFirstNameSearch.toLowerCase()));
+      .startsWith(clean(authorFirstName.toLowerCase()));
 
   const lastNameMatches = (author: Name) =>
     clean(author.lastName)
       .toLowerCase()
-      .startsWith(clean(authorLastNameSearch.toLowerCase()));
+      .startsWith(clean(authorLastName.toLowerCase()));
 
   const authorMatches = (row: Variant): boolean => {
     if (!row.references) {
-      return !(authorFirstNameSearch || authorLastNameSearch);
+      return !(authorFirstName || authorLastName);
     }
     return row.references?.some((reference) =>
       reference.authors.some(
         (author) =>
-          (!authorFirstNameSearch || firstNameMatches(author)) &&
-          (!authorLastNameSearch || lastNameMatches(author))
+          (!authorFirstName || firstNameMatches(author)) &&
+          (!authorLastName || lastNameMatches(author))
       )
     );
   };
 
-  if (authorFirstNameSearch || authorLastNameSearch) {
+  if (authorFirstName || authorLastName) {
     rows = rows
       .map((row) => ({
         ...row,
@@ -94,8 +94,8 @@ const Home: NextPage = () => {
           ...reference,
           matched: reference.authors.some(
             (author) =>
-              (!authorFirstNameSearch || firstNameMatches(author)) &&
-              (!authorLastNameSearch || lastNameMatches(author))
+              (!authorFirstName || firstNameMatches(author)) &&
+              (!authorLastName || lastNameMatches(author))
           ),
         })),
         authorMatch: authorMatches(row),
