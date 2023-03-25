@@ -2,7 +2,9 @@ import { type Dispatch, type SetStateAction } from "react";
 
 interface Handlers {
   toggleShort: () => void;
-  setNameSearch: Dispatch<SetStateAction<string>>;
+  setVariantSearch: Dispatch<SetStateAction<string>>;
+  setAuthorFirstNameSearch: Dispatch<SetStateAction<string>>;
+  setAuthorLastNameSearch: Dispatch<SetStateAction<string>>;
   setPage: Dispatch<SetStateAction<number>>;
 }
 

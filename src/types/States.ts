@@ -1,6 +1,8 @@
 interface States {
   short: boolean;
-  search: string;
+  variantSearch: string;
+  authorFirstNameSearch: string;
+  authorLastNameSearch: string;
 }
 
 export default States;

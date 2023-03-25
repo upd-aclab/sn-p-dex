@@ -8,10 +8,14 @@ import Table from "~/components/Table";
 import data from "~/data/data";
 import shorten from "~/utils/shorten";
 import lcs from "~/utils/lcs";
+import type Variant from "~/types/Variant";
+import type Name from "~/types/Name";
 
 const Home: NextPage = () => {
   const [short, setShort] = useState(true);
-  const [nameSearch, setNameSearch] = useState("");
+  const [variantSearch, setVariantSearch] = useState("");
+  const [authorFirstNameSearch, setAuthorFirstNameSearch] = useState("");
+  const [authorLastNameSearch, setAuthorLastNameSearch] = useState("");
   const [page, setPage] = useState(1);
 
   const decrementPage = () => {
@@ -27,12 +31,16 @@ const Home: NextPage = () => {
   };
 
   const states = {
-    search: nameSearch,
+    variantSearch,
+    authorFirstNameSearch,
+    authorLastNameSearch,
     short,
   };
 
   const handlers = {
-    setNameSearch,
+    setVariantSearch,
+    setAuthorFirstNameSearch,
+    setAuthorLastNameSearch,
     toggleShort,
     setPage,
   };
@@ -44,16 +52,48 @@ const Home: NextPage = () => {
     rows = shorten(data);
   }
 
-  rows = rows
-    .map((row) => ({
-      ...row,
-      matchIndices: lcs(row.name.toLowerCase(), nameSearch.toLowerCase()),
-    }))
-    .filter(
-      (updatedRows) =>
-        nameSearch.length === 0 || updatedRows.matchIndices.length > 0
-    )
-    .sort((a, b) => b.matchIndices.length - a.matchIndices.length);
+  if (variantSearch) {
+    rows = rows
+      .map((row) => ({
+        ...row,
+        matchIndices: lcs(row.name.toLowerCase(), variantSearch.toLowerCase()),
+      }))
+      .filter((updatedRows) => updatedRows.matchIndices.length > 0)
+      .sort((a, b) => b.matchIndices.length - a.matchIndices.length);
+  }
+
+  const authorMatches = (row: Variant): boolean => {
+    if (!row.references) {
+      return !(authorFirstNameSearch || authorLastNameSearch);
+    }
+
+    const firstNameMatches = (author: Name) =>
+      author.firstName
+        .toLowerCase()
+        .startsWith(authorFirstNameSearch.toLowerCase());
+
+    const lastNameMatches = (author: Name) =>
+      author.lastName
+        .toLowerCase()
+        .startsWith(authorLastNameSearch.toLowerCase());
+
+    return row.references?.some((reference) =>
+      reference.authors.some(
+        (author) =>
+          (!authorFirstNameSearch || firstNameMatches(author)) &&
+          (!authorLastNameSearch || lastNameMatches(author))
+      )
+    );
+  };
+
+  if (authorFirstNameSearch || authorLastNameSearch) {
+    rows = rows
+      .map((row) => ({
+        ...row,
+        authorMatch: authorMatches(row),
+      }))
+      .filter((row) => row.authorMatch);
+  }
 
   const pageLength = 15;
   const pages = Math.ceil(rows.length / pageLength);
