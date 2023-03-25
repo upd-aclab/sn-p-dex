@@ -1,4 +1,4 @@
-import Name from "./Name";
+import type Name from "./Name";
 
 interface Reference {
   link: string;
