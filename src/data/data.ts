@@ -7,12 +7,34 @@ const data: Variant[] = [
     references: [
       {
         link: "https://www.researchgate.net/publication/220443792_Spiking_Neural_P_Systems",
-        site: "",
         doi: "",
-        authors: [],
-        date: new Date(),
+        authors: [
+          {
+            firstName: "Mihai",
+            lastName: "Ionescu",
+          },
+          {
+            firstName: "Gheorghe",
+            lastName: "Păun",
+          },
+          {
+            firstName: "Takashi",
+            lastName: "Yokomori",
+          },
+        ],
+        date: new Date(2006, 5),
         open: true,
-        bibtex: "",
+        bibtex: `
+@article{article,
+author = {Ionescu, Mihai and Paun, Gheorghe and Yokomori, Takashi},
+year = {2006},
+month = {06},
+pages = {279-308},
+title = {Spiking Neural P Systems.},
+volume = {71},
+journal = {Fundam. Inform.}
+}
+				`,
       },
     ],
   },
@@ -127,7 +149,6 @@ const data: Variant[] = [
     references: [
       {
         link: "https://link.springer.com/article/10.1007/s00521-015-1857-4",
-        site: "",
         doi: "",
         authors: [],
         date: new Date(),

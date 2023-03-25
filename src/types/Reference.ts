@@ -1,8 +1,9 @@
+import Name from "./Name";
+
 interface Reference {
   link: string;
-  site: string;
   doi: string;
-  authors: string[];
+  authors: Name[];
   date: Date;
   open: boolean;
   bibtex: string;
