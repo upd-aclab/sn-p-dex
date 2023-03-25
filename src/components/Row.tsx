@@ -21,7 +21,7 @@ const Row = ({ data }: Props) => {
       <td className="cell">
         {data.references && (
           <div className="flex gap-1">
-            {data.references.map(({link}, index) => (
+            {data.references.map(({ link }, index) => (
               <Link
                 key={index}
                 href={link}

@@ -271,42 +271,42 @@ const data: Variant[] = [
       },
     ],
   },
-	{
-		name: "Fuzzy Reasoning Spiking Neural P Systems",
-		description: "",
-		references: [
-			{
-				link: "https://www.sciencedirect.com/science/article/abs/pii/S0020025512004793",
-				doi: "10.1016/j.ins.2012.07.015",
-				authors: [
-					{
-						firstName: "Hong",
-						lastName: "Peng",
-					},
-					{
-						firstName: "Jun",
-						lastName: "Wang",
-					},
-					{
-						firstName: "Mario",
-						lastName: "Pérez-Jiménez",
-					},
-					{
-						firstName: "Hao",
-						lastName: "Wang",
-					},
-					{
-						firstName: "Jie",
-						lastName: "Shao",
-					},
-					{
-						firstName: "Tao",
-						lastName: "Wang",
-					},
-				],
-				date: new Date(2013, 5),
-				open: false,
-				bibtex: `
+  {
+    name: "Fuzzy Reasoning Spiking Neural P Systems",
+    description: "",
+    references: [
+      {
+        link: "https://www.sciencedirect.com/science/article/abs/pii/S0020025512004793",
+        doi: "10.1016/j.ins.2012.07.015",
+        authors: [
+          {
+            firstName: "Hong",
+            lastName: "Peng",
+          },
+          {
+            firstName: "Jun",
+            lastName: "Wang",
+          },
+          {
+            firstName: "Mario",
+            lastName: "Pérez-Jiménez",
+          },
+          {
+            firstName: "Hao",
+            lastName: "Wang",
+          },
+          {
+            firstName: "Jie",
+            lastName: "Shao",
+          },
+          {
+            firstName: "Tao",
+            lastName: "Wang",
+          },
+        ],
+        date: new Date(2013, 5),
+        open: false,
+        bibtex: `
 @article{PENG2013106,
 	title = {Fuzzy reasoning spiking neural P system for fault diagnosis},
 	journal = {Information Sciences},
@@ -321,9 +321,9 @@ const data: Variant[] = [
 	keywords = {Fault diagnosis, P systems, Spiking neural P systems, Fuzzy knowledge representation, Fuzzy reasoning},
 }
 `,
-			},
-		],
-	},
+      },
+    ],
+  },
   {
     name: "Spiking Neural P Systems with Chain structures",
   },
