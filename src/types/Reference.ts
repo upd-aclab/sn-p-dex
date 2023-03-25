@@ -7,6 +7,7 @@ interface Reference {
   date: Date;
   open: boolean;
   bibtex: string;
+  matched?: boolean;
 }
 
 export default Reference;

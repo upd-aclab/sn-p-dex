@@ -63,21 +63,20 @@ const Home: NextPage = () => {
       .sort((a, b) => b.matchIndices.length - a.matchIndices.length);
   }
 
+  const firstNameMatches = (author: Name) =>
+    clean(author.firstName)
+      .toLowerCase()
+      .startsWith(clean(authorFirstNameSearch.toLowerCase()));
+
+  const lastNameMatches = (author: Name) =>
+    clean(author.lastName)
+      .toLowerCase()
+      .startsWith(clean(authorLastNameSearch.toLowerCase()));
+
   const authorMatches = (row: Variant): boolean => {
     if (!row.references) {
       return !(authorFirstNameSearch || authorLastNameSearch);
     }
-
-    const firstNameMatches = (author: Name) =>
-      clean(author.firstName)
-        .toLowerCase()
-        .startsWith(clean(authorFirstNameSearch.toLowerCase()));
-
-    const lastNameMatches = (author: Name) =>
-      clean(author.lastName)
-        .toLowerCase()
-        .startsWith(clean(authorLastNameSearch.toLowerCase()));
-
     return row.references?.some((reference) =>
       reference.authors.some(
         (author) =>
@@ -91,6 +90,14 @@ const Home: NextPage = () => {
     rows = rows
       .map((row) => ({
         ...row,
+        references: row.references?.map((reference) => ({
+          ...reference,
+          matched: reference.authors.some(
+            (author) =>
+              (!authorFirstNameSearch || firstNameMatches(author)) &&
+              (!authorLastNameSearch || lastNameMatches(author))
+          ),
+        })),
         authorMatch: authorMatches(row),
       }))
       .filter((row) => row.authorMatch);
