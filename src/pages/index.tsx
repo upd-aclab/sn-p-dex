@@ -69,12 +69,12 @@ const Home: NextPage = () => {
   const firstNameMatches = (author: Name) =>
     clean(author.firstName)
       .toLowerCase()
-      .startsWith(clean(authorFirstName.toLowerCase()));
+      .includes(clean(authorFirstName.toLowerCase()));
 
   const lastNameMatches = (author: Name) =>
     clean(author.lastName)
       .toLowerCase()
-      .startsWith(clean(authorLastName.toLowerCase()));
+      .includes(clean(authorLastName.toLowerCase()));
 
   const authorMatches = (row: Variant): boolean => {
     if (!row.references) {
