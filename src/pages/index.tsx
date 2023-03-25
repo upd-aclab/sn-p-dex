@@ -107,16 +107,22 @@ const Home: NextPage = () => {
       </div>
       <div className="flex w-[70%] items-center justify-center">
         <section className="flex flex-col gap-4">
-          <Table
-            columns={columns}
-            rows={rows.slice(pageLength * (page - 1), pageLength * page)}
-          />
-          <Pager
-            page={page}
-            pages={pages}
-            decrementPage={decrementPage}
-            incrementPage={incrementPage}
-          />
+          {rows.length > 0 ? (
+            <>
+              <Table
+                columns={columns}
+                rows={rows.slice(pageLength * (page - 1), pageLength * page)}
+              />
+              <Pager
+                page={page}
+                pages={pages}
+                decrementPage={decrementPage}
+                incrementPage={incrementPage}
+              />
+            </>
+          ) : (
+            <div>No matching data found... ˙◠˙</div>
+          )}
         </section>
       </div>
     </main>
