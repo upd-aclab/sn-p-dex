@@ -11,7 +11,7 @@ import lcs from "~/utils/lcs";
 
 const Home: NextPage = () => {
   const [short, setShort] = useState(true);
-  const [search, setSearch] = useState("");
+  const [nameSearch, setNameSearch] = useState("");
   const [page, setPage] = useState(1);
 
   const decrementPage = () => {
@@ -27,12 +27,12 @@ const Home: NextPage = () => {
   };
 
   const states = {
-    search,
+    search: nameSearch,
     short,
   };
 
   const handlers = {
-    setSearch,
+    setNameSearch,
     toggleShort,
     setPage,
   };
@@ -47,11 +47,11 @@ const Home: NextPage = () => {
   rows = rows
     .map((row) => ({
       ...row,
-      matchIndices: lcs(row.name.toLowerCase(), search.toLowerCase()),
+      matchIndices: lcs(row.name.toLowerCase(), nameSearch.toLowerCase()),
     }))
     .filter(
       (updatedRows) =>
-        search.length === 0 || updatedRows.matchIndices.length > 0
+        nameSearch.length === 0 || updatedRows.matchIndices.length > 0
     )
     .sort((a, b) => b.matchIndices.length - a.matchIndices.length);
 

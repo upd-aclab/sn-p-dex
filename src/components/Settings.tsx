@@ -24,7 +24,7 @@ const Settings = ({ states, handlers }: Props) => {
           value={states.search}
           placeholder="Search by variant..."
           onChange={(e) => {
-            handlers.setSearch(e.target.value);
+            handlers.setNameSearch(e.target.value);
             handlers.setPage(1);
           }}
           className="w-full rounded-md border border-solid border-white bg-black px-3 py-2 text-white"
