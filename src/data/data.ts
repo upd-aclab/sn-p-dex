@@ -273,7 +273,7 @@ const data: Variant[] = [
   },
   {
     name: "Fuzzy Reasoning Spiking Neural P Systems",
-    description: "",
+    description: "Uses fuzzy reasoning",
     references: [
       {
         link: "https://www.sciencedirect.com/science/article/abs/pii/S0020025512004793",
