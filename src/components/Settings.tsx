@@ -10,7 +10,7 @@ const Settings = ({ states, handlers }: Props) => {
   return (
     <section className="px-10">
       <h2 className="mb-2 text-3xl">Settings</h2>
-      <label className="mb-4 flex gap-4">
+      <label className="mb-4 flex gap-4 hover:cursor-pointer">
         <input
           type="checkbox"
           checked={states.short}
