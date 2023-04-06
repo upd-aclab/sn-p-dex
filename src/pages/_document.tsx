@@ -11,8 +11,7 @@ export default function Document() {
         <link rel="icon" href="/favicon.svg" />
         <link
           rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css"
+          href="https://cdn.jsdelivr.net/gh/sugina-dev/latin-modern-web@1.0.1/style/latinmodern-roman.css"
         />
         <link
           rel="stylesheet"
